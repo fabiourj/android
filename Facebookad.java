@@ -1,4 +1,4 @@
-package com.arena.esportes;
+package nome.do.pacote;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,7 +10,12 @@ import androidx.annotation.NonNull;
 //import com.google.android.gms.ads.AdRequest;
 //import com.google.android.gms.ads.LoadAdError;
 //import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
-
+////////////////////////////////////////////////////////////////////////////////////////
+//ADD  implementation 'com.facebook.android:audience-network-sdk:6.+' //////////////////
+//em APP build.gradle///////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -20,21 +25,12 @@ import java.util.Random;
 import android.util.Log;
 /////////////////////////////////////////////////
 
-///////////////////////////////////////////////////////////////////////////////////////
+////////////////////ANÚNCIO INTERSTICIAL//////////////////////////////////////////////
 
 
 public class Facebookad  extends Activity {
 
-    //TODO change this if you want to limit interstishal ads
-    //public static int NUMBER_OF_INTERSTISHAL_ADS_PER_SESSION = 10;
-    //TODO dont touch this
-    //public static int NUMBER_OF_INTERSTISHAL_ADS_SHOWN = 0;
-
-
-    //TODO change this if you want to limit banner ads
-   // public static int NUMBER_OF_BANNER_ADS_PER_SESSION = 5;
-    //TODO dont touch this
-    //public static int NUMBER_OF_BANNER_ADS_SHOWN = 0;
+  
 
   ////////////////////////////////////////////////////////////////
  com.facebook.ads.InterstitialAd facebookInterstitialAd;
@@ -45,7 +41,7 @@ public class Facebookad  extends Activity {
     public  void onCreate() {
        
 
-        //Código a ser executado quando o applicativo é inicializado
+        //Código a ser executado quando a activity é inicializada
 
 ////////////////////////////////////////////////////////////////
  Random rand = new Random();
@@ -57,8 +53,7 @@ int rand_int1 = rand.nextInt(3);
 
 
 
-
-
+////////////////////////ANÚNCIO INTERSTICIAL//////////////////////////////////////////
 facebookInterstitialAd = new com.facebook.ads.InterstitialAd(this, getString(R.string.facebook_interstitial_full_screen));
                 com.facebook.ads.InterstitialAdListener interstitialAdListener = new com.facebook.ads.InterstitialAdListener() {
                     @Override
@@ -104,7 +99,7 @@ facebookInterstitialAd = new com.facebook.ads.InterstitialAd(this, getString(R.s
                         facebookInterstitialAd.buildLoadAdConfig()
                                 .withAdListener(interstitialAdListener)
                                 .build());
-
+///////////////////////////////////////////////////////////////////////////////////
 
 
 

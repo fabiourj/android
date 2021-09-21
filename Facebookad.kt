@@ -8,28 +8,24 @@ import java.util.Random
 //import com.google.android.gms.ads.AdRequest;
 //import com.google.android.gms.ads.LoadAdError;
 //import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+////////////////////////////////////////////////////////////////////////////////////////
+//ADD  implementation 'com.facebook.android:audience-network-sdk:6.+' //////////////////
+//em APP build.gradle///////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////
-/////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////
 class Facebookad : Activity() {
-    //TODO change this if you want to limit interstishal ads
-    //public static int NUMBER_OF_INTERSTISHAL_ADS_PER_SESSION = 10;
-    //TODO dont touch this
-    //public static int NUMBER_OF_INTERSTISHAL_ADS_SHOWN = 0;
-    //TODO change this if you want to limit banner ads
-    // public static int NUMBER_OF_BANNER_ADS_PER_SESSION = 5;
-    //TODO dont touch this
-    //public static int NUMBER_OF_BANNER_ADS_SHOWN = 0;
-    ////////////////////////////////////////////////////////////////
-    var facebookInterstitialAd: InterstitialAd? = null
+   
+var facebookInterstitialAd: InterstitialAd? = null
+companion object {    private const val TAG = ">>>>>>>>>>>"    }
 
-    ///////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////
     //@Override
     fun onCreate() {
 
 
-        //Código a ser executado quando o applicativo é inicializado
+    //Código a ser executado quando a instância é inicializada
 
 
 
@@ -37,9 +33,9 @@ class Facebookad : Activity() {
         val rand = Random()
         val rand_int1 = rand.nextInt(3)
         AudienceNetworkAds.initialize(this)
-//////////////////////////////////////////////////////////////
-/////////this , requireActivity(), requireContext(), activity!! 
-//////////////////////////////////////////////////////////////////////
+////////////////////////////ANÚNCIO INTERSTICIAL/////////////////////////////////////
+/////////( this , requireActivity(), requireContext(), activity!! )//////////////////
+//////////////////////////////////////////////////////////////////////////////////////
 
         facebookInterstitialAd = InterstitialAd(this, getString(R.string.facebook_interstitial_full_screen))
         val interstitialAdListener: InterstitialAdListener = object : InterstitialAdListener {
@@ -83,7 +79,5 @@ class Facebookad : Activity() {
                         .build())
     }
 
-    companion object {
-        private const val TAG = ">>>>>>>>>>>"
-    }
+    
 }
